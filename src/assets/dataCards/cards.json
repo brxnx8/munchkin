@@ -1,0 +1,260 @@
+[
+    {
+        "name": "1000GoldPieces",
+        "description": "Uma pilha reluzente de ouro, perfeita para subornar ou comprar sua próxima vitória.",
+        "imageCard": "src/assets/images/cardImages/1000GoldPieces.jpeg",
+        "tipo": "SubirDeNivel"
+    },
+    {
+        "name": "3872Orcs",
+        "description": "Um exército de orcs pronto para esmagar qualquer um que se oponha a você.",
+        "imageCard": "src/assets/images/cardImages/3872Orcs.jpeg",
+        "tipo": "Monstro"
+    },
+    {
+        "name": "Amazon",
+        "description": "Uma guerreira feroz que luta com graça e brutalidade.",
+        "imageCard": "src/assets/images/cardImages/Amazon.jpeg",
+        "tipo": "Monstro"
+    },
+    {
+        "name": "Ancient",
+        "description": "Um artefato antigo com poderes desconhecidos, pronto para mudar o jogo.",
+        "imageCard": "src/assets/images/cardImages/Ancient.jpeg",
+        "tipo": "Equipamento"
+    },
+    {
+        "name": "Baby",
+        "description": "Não subestime o poder de um bebê fofinho, mas perigoso!",
+        "imageCard": "src/assets/images/cardImages/Baby.jpeg",
+        "tipo": "Monstro"
+    },
+    {
+        "name": "BadAssBandana",
+        "description": "Um acessório que aumenta sua coragem e estilo no campo de batalha.",
+        "imageCard": "src/assets/images/cardImages/BadAssBandana.jpeg",
+        "tipo": "Equipamento"
+    },
+    {
+        "name": "Bigfoot",
+        "description": "O lendário Pé-Grande, uma criatura com força esmagadora.",
+        "imageCard": "src/assets/images/cardImages/Bigfoot.jpeg",
+        "tipo": "Monstro"
+    },
+    {
+        "name": "BoilAnAnthill",
+        "description": "Uma estratégia caótica que causa confusão total no campo de batalha.",
+        "imageCard": "src/assets/images/cardImages/BoilAnAnthill.jpeg",
+        "tipo": "Maldição"
+    },
+    {
+        "name": "BootsOfButtKicking",
+        "description": "Botas mágicas que garantem um chute certeiro nos seus inimigos.",
+        "imageCard": "src/assets/images/cardImages/BootsOfButtKicking.jpeg",
+        "tipo": "Equipamento"
+    },
+    {
+        "name": "BootsOfRunningReallyFast",
+        "description": "Botas que te permitem fugir de qualquer perigo com velocidade surpreendente.",
+        "imageCard": "src/assets/images/cardImages/BootsOfRunningReallyFast.jpeg",
+        "tipo": "Equipamento"
+    },
+    {
+        "name": "BowWithRibbons",
+        "description": "Um arco estiloso com fitas que confunde seus oponentes.",
+        "imageCard": "src/assets/images/cardImages/BowWithRibbons.jpeg",
+        "tipo": "Equipamento"
+    },
+    {
+        "name": "BribeGMWithFood",
+        "description": "Use um suborno de comida para convencer o Mestre do Jogo a seu favor.",
+        "imageCard": "src/assets/images/cardImages/BribeGMWithFood.jpeg",
+        "tipo": "SubirDeNivel"
+    },
+    {
+        "name": "BroadSword",
+        "description": "Uma espada larga que corta através de armaduras com facilidade.",
+        "imageCard": "src/assets/images/cardImages/BroadSword.jpeg",
+        "tipo": "Equipamento"
+    },
+    {
+        "name": "BucklerOfSwashing",
+        "description": "Um escudo pequeno, mas eficaz, que aumenta sua chance de sobrevivência.",
+        "imageCard": "src/assets/images/cardImages/BucklerOfSwashing.jpeg",
+        "tipo": "Equipamento"
+    },
+    {
+        "name": "Bullrog",
+        "description": "Uma terrível criatura que mistura força de touro com o fogo de um demônio.",
+        "imageCard": "src/assets/images/cardImages/Bullrog.jpeg",
+        "tipo": "Monstro"
+    },
+    {
+        "name": "ChainsawOfBloodyDismemberment",
+        "description": "Uma motosserra mortal que espalha terror e desmembramento.",
+        "imageCard": "src/assets/images/cardImages/ChainsawOfBloodyDismemberment.jpeg",
+        "tipo": "Equipamento"
+    },
+    {
+        "name": "ChangeClass",
+        "description": "Troque sua classe para surpreender seus oponentes.",
+        "imageCard": "src/assets/images/cardImages/ChangeClass.jpeg",
+        "tipo": "Classe"
+    },
+    {
+        "name": "ChangeRace",
+        "description": "Altere sua raça para ganhar novas habilidades.",
+        "imageCard": "src/assets/images/cardImages/ChangeRace.jpeg",
+        "tipo": "Raça"
+    },
+    {
+        "name": "ChangeSex",
+        "description": "Mude seu gênero para confundir e ganhar bônus inesperados.",
+        "imageCard": "src/assets/images/cardImages/ChangeSex.jpeg",
+        "tipo": "Maldição"
+    },
+    {
+        "name": "Cheat",
+        "description": "Quebre todas as regras com esta carta poderosa e enganosa.",
+        "imageCard": "src/assets/images/cardImages/Cheat.jpeg",
+        "tipo": "SubirDeNivel"
+    },
+    {
+        "name": "CheeseGraterOfPeace",
+        "description": "Um ralador de queijo mágico que promove a paz (ou não).",
+        "imageCard": "src/assets/images/cardImages/CheeseGraterOfPeace.jpeg",
+        "tipo": "Equipamento"
+    },
+    {
+        "name": "ChickenOnYourHead",
+        "description": "Um frango na sua cabeça que traz tanto sorte quanto constrangimento.",
+        "imageCard": "src/assets/images/cardImages/ChickenOnYourHead.jpeg",
+        "tipo": "Maldição"
+    },
+    {
+        "name": "Cleric1",
+        "description": "Um clérigo pronto para abençoar ou amaldiçoar, dependendo da situação.",
+        "imageCard": "src/assets/images/cardImages/Cleric1.jpeg",
+        "tipo": "Classe"
+    },
+    {
+        "name": "Cleric2",
+        "description": "Um clérigo de nível avançado, com poderes ainda mais impressionantes.",
+        "imageCard": "src/assets/images/cardImages/Cleric2.jpeg",
+        "tipo": "Classe"
+    },
+    {
+        "name": "Cleric3",
+        "description": "O clérigo supremo, capaz de virar o jogo com uma única oração.",
+        "imageCard": "src/assets/images/cardImages/Cleric3.jpeg",
+        "tipo": "Classe"
+    },
+    {
+        "name": "CloakOfObscurity",
+        "description": "Uma capa que te torna virtualmente invisível para os inimigos.",
+        "imageCard": "src/assets/images/cardImages/CloakOfObscurity.jpeg",
+        "tipo": "Equipamento"
+    },
+    {
+        "name": "ConvenientAdditionError",
+        "description": "Um erro conveniente para manipular os números a seu favor.",
+        "imageCard": "src/assets/images/cardImages/ConvenientAdditionError.jpeg",
+        "tipo": "Maldição"
+    },
+    {
+        "name": "CotionOfPonfusion",
+        "description": "Uma poção que causa confusão tanto nos inimigos quanto nos aliados.",
+        "imageCard": "src/assets/images/cardImages/CotionOfPonfusion.jpeg",
+        "tipo": "Porção"
+    },
+    {
+        "name": "Crabs",
+        "description": "Pequenos e irritantes, mas capazes de causar grandes problemas.",
+        "imageCard": "src/assets/images/cardImages/Crabs.jpeg",
+        "tipo": "Monstro"
+    },
+    {
+        "name": "DaggerOfTreachery",
+        "description": "Uma adaga traiçoeira que sempre encontra o ponto fraco do inimigo.",
+        "imageCard": "src/assets/images/cardImages/DaggerOfTreachery.jpeg",
+        "tipo": "Equipamento"
+    },
+    {
+        "name": "Divinelntervention",
+        "description": "Um ato divino que pode salvar ou destruir jogadores no momento certo.",
+        "imageCard": "src/assets/images/cardImages/Divinelntervention.jpeg",
+        "tipo": "SubirDeNivel"
+    },
+    {
+        "name": "Door",
+        "description": "Abra esta porta para encontrar perigos ou tesouros ocultos.",
+        "imageCard": "src/assets/images/cardImages/Door.jpeg",
+        "tipo": "Monstro"
+    },
+    {
+        "name": "Doppleganger",
+        "description": "Um clone seu que duplica suas forças no combate.",
+        "imageCard": "src/assets/images/cardImages/Doppleganger.jpeg",
+        "tipo": "Porção"
+    },
+    {
+        "name": "DroolingSlime",
+        "description": "Uma gosma nojenta e perigosa, pronta para atacar.",
+        "imageCard": "src/assets/images/cardImages/DroolingSlime.jpeg",
+        "tipo": "Monstro"
+    },
+    {
+        "name": "DuckOfDoom",
+        "description": "Um pato aparentemente inofensivo, mas cheio de maldições.",
+        "imageCard": "src/assets/images/cardImages/DuckOfDoom.jpeg",
+        "tipo": "Maldição"
+    },
+    {
+        "name": "Dwarf1",
+        "description": "Um anão determinado, com força e resistência notáveis.",
+        "imageCard": "src/assets/images/cardImages/Dwarf1.jpeg",
+        "tipo": "Raça"
+    },
+    {
+        "name": "Dwarf2",
+        "description": "Um anão de nível avançado, com habilidades aprimoradas.",
+        "imageCard": "src/assets/images/cardImages/Dwarf2.jpeg",
+        "tipo": "Raça"
+    },
+    {
+        "name": "Dwarf3",
+        "description": "O anão lendário, conhecido por sua força e coragem incomparáveis.",
+        "imageCard": "src/assets/images/cardImages/Dwarf3.jpeg",
+        "tipo": "Raça"
+    },
+    {
+        "name": "ElectricRadioactiveAcidPotion",
+        "description": "Uma poção que combina eletricidade, radiação e ácido para destruir tudo.",
+        "imageCard": "src/assets/images/cardImages/ElectricRadioactiveAcidPotion.jpeg",
+        "tipo": "Porção"
+    },
+    {
+        "name": "ElevenFootPole",
+        "description": "Um bastão de onze pés para manter problemas bem longe.",
+        "imageCard": "src/assets/images/cardImages/ElevenFootPole.jpeg",
+        "tipo": "Equipamento"
+    },
+    {
+        "name": "Elf1",
+        "description": "Um elfo ágil e habilidoso, mestre das florestas.",
+        "imageCard": "src/assets/images/cardImages/Elf1.jpeg",
+        "tipo": "Raça"
+    },
+    {
+        "name": "Elf2",
+        "description": "Um elfo de nível avançado, com habilidades arcanas superiores.",
+        "imageCard": "src/assets/images/cardImages/Elf2.jpeg",
+        "tipo": "Raça"
+    },
+    {
+        "name": "Elf3",
+        "description": "O elfo supremo, cuja elegância e poder são incomparáveis.",
+        "imageCard": "src/assets/images/cardImages/Elf3.jpeg",
+        "tipo": "Raça"
+    }
+]
