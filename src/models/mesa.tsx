@@ -31,6 +31,9 @@ export class Mesa {
         this.baralhoPorta = new Deck(repository.filtraCartas(true));
         this.baralhoTesouro = new Deck(repository.filtraCartas(false));
 
+        this.baralhoPorta.Embaralhar();
+        this.baralhoTesouro.Embaralhar();
+        
         this.DistribuirCartas()
 
     }
@@ -38,10 +41,10 @@ export class Mesa {
     DistribuirCartas(){
         this.listaJogadores.forEach((element: Jogador) => {
             for(let c = 1; c <= 4; c++){
-                const nomeCartaPorta = this.baralhoPorta.PuxarCarta()?.name;
-                const nomeCartaTesouro = this.baralhoTesouro.PuxarCarta()?.name;
-                this.listaCartasNaMao.push(new CartaNaMao(element.nome, nomeCartaPorta));
-                this.listaCartasNaMao.push(new CartaNaMao(element.nome, nomeCartaTesouro));
+                const CartaPorta = this.baralhoPorta.PuxarCarta();
+                const CartaTesouro = this.baralhoTesouro.PuxarCarta();
+                this.listaCartasNaMao.push(new CartaNaMao(element, CartaPorta));
+                this.listaCartasNaMao.push(new CartaNaMao(element, CartaTesouro));
 
             }
         })

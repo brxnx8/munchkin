@@ -52,11 +52,42 @@ export function Game() {
 
                 return(
                     <div className={jogador.isUser && index==0 ? "bot0ContainerDetails" : `bot${index}ContainerDetails`} key={index}>
-                        <img src={imgAvatar} className="imgAvatar"/>
-                        <div className="divDetailsText">
-                            <h1>{jogador.nome}</h1>
-                            <h2>-Nivel: {jogador.nivel}</h2>
-                        </div>
+                        <div className="conatinerPlayer">
+                            <div className="containerDetailsPlayer">
+
+                                <img src={imgAvatar} className="imgAvatar"/>
+                                <div className="divDetailsText">
+                                    <h1>{jogador.nome}</h1>
+                                    <h2>Nivel: {jogador.nivel}</h2>
+                                    <h2>Força: {jogador.forca}</h2>
+                                </div>
+
+                            </div>
+
+                            
+                            
+                                {jogador.isUser ? ( 
+                                    <div className="containerCardsUser" >
+                                        {
+                                        mesa.listaCartasNaMao.map((elemento, index) => {
+                                            if (elemento.jogador == jogador){
+                                                return (
+                                                    
+                                                    <img src={elemento.carta.imageCard} key={index} className="cardUser"/>
+                                                    
+                                                )
+                                            }else{
+                                                return
+                                            }
+                                            
+                                        })
+                                        }
+                                    </div>        
+                                ) : (undefined)
+                                    
+                                }
+                            </div>
+                        
                     </div>
                 )
 

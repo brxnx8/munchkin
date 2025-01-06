@@ -1,9 +1,13 @@
-export class CartaNaMao {
-    nameJogador: string;
-    nameCarta: string;
+import { Card } from "./carta";
+import { Jogador } from "./jogador";
 
-    constructor(nameJogador: string, nameCarta: string) {
-        this.nameJogador = nameJogador;
-        this.nameCarta = nameCarta;
+export class CartaNaMao {
+    jogador: Jogador;
+    carta: Card;
+
+    constructor(jogador: Jogador, carta: Card) {
+        this.jogador = jogador;
+        this.carta = carta;
+        
     }
 }

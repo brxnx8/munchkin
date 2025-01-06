@@ -180,9 +180,9 @@
         "tipo": "Equipamento"
     },
     {
-        "name": "Divinelntervention",
+        "name": "DivineIntervention",
         "description": "Um ato divino que pode salvar ou destruir jogadores no momento certo.",
-        "imageCard": "src/assets/images/cardImages/Divinelntervention.jpeg",
+        "imageCard": "src/assets/images/cardImages/DivineIntervention.jpeg",
         "tipo": "SubirDeNivel"
     },
     {

@@ -7,22 +7,43 @@ export const ContainerGame = styled.main`
 
     position: relative;
 
+    .conatinerPlayer{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .containerDetailsPlayer{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        gap: 30px;
+
+
+    }
+
     .divDetailsText {
+        width: 70%;
+
         color: white;
 
-        font-size: 25px;
+        font-size: 20px;
 
         display: flex;
+        flex-direction: column;
 
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
 
         -webkit-text-stroke-width: 0.5px;
         -webkit-text-stroke-color: red;
     }
 
     .imgAvatar {
-        width: 100px;
+        width: 80px;
+        height: 80px;
     }
 
     #btnPorta{
@@ -35,7 +56,7 @@ export const ContainerGame = styled.main`
 
     .porta {
         position: absolute;
-        top: 38%;
+        top: 30%;
         left: 43.8%;
 
         width: 200px;
@@ -51,28 +72,42 @@ export const ContainerGame = styled.main`
     .bot0ContainerDetails {
         position: absolute;
         top: 77%;
-        left: 43%;
+        left: 1%;
+        display: flex;
     }
 
     .bot1ContainerDetails {
         position: absolute;
-        top: 30%;
+        top: 0%;
         left: 0.8%;
+        display: flex;
     }
 
     .bot2ContainerDetails {
         position: absolute;
         top: 0%;
-        left: 43%;
+        left: 20%;
+        display: flex;
     }
 
     .bot3ContainerDetails {
         position: absolute;
-        top: 30%;
-        left: 88%;
+        top: 0%;
+        left: 40%;
+        display: flex;
     }
 
     img{
         cursor: pointer;
+    }
+
+    .containerCardsUser{
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .cardUser{
+        width: 130px;
     }
 `;
