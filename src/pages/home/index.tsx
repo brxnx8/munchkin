@@ -36,7 +36,8 @@ export function Home() {
             classe: "nenhuma",
             raca: "Humano",
             forca: 1,
-            isUser: true
+            isUser: true,
+            qtdCartas: 8
         });
         const listaJogadores = [player];
         for(let i = 1; i < 4; i++){
@@ -47,7 +48,8 @@ export function Home() {
                     classe: "nenhuma",
                     raca: "Humano",
                     forca: 1,
-                    isUser: false
+                    isUser: false,
+                    qtdCartas: 8
                 })
             )
         }

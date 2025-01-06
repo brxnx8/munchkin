@@ -7,6 +7,12 @@ export const ContainerGame = styled.main`
 
     position: relative;
 
+    h1{
+        color: white;
+        -webkit-text-stroke-width: 0.5px;
+        -webkit-text-stroke-color: red;
+    }
+
     .conatinerPlayer{
         display: flex;
         justify-content: space-between;
@@ -109,5 +115,11 @@ export const ContainerGame = styled.main`
 
     .cardUser{
         width: 130px;
+    }
+
+    .CardType{
+        background-color: black;
+
+        color: white;
     }
 `;

@@ -34,6 +34,7 @@ export function Game() {
         }
     }
 
+
     return (
         <ContainerGame>
             <img src={Porta} className={classPorta} onClick={classPorta != "portaCarta" ? AbrirPorta : undefined}/>
@@ -72,9 +73,10 @@ export function Game() {
                                         mesa.listaCartasNaMao.map((elemento, index) => {
                                             if (elemento.jogador == jogador){
                                                 return (
-                                                    
-                                                    <img src={elemento.carta.imageCard} key={index} className="cardUser"/>
-                                                    
+                                                    <div key={index}>
+                                                        <p className="CardType">{elemento.carta.tipo}</p>
+                                                        <img src={elemento.carta.imageCard}  className="cardUser"/>
+                                                    </div>
                                                 )
                                             }else{
                                                 return
@@ -83,7 +85,13 @@ export function Game() {
                                         })
                                         }
                                     </div>        
-                                ) : (undefined)
+                                ) : (
+
+                                    <div>
+                                        <h1>Cartas: {jogador.qtdCartas}</h1>
+                                    </div>
+
+                                )
                                     
                                 }
                             </div>
