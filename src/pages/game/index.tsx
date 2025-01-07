@@ -16,6 +16,7 @@ import { MesaContext } from "../../contexts/MesaContext";
 import { Card } from "../../models/carta";
 import { Jogador } from "../../models/jogador";
 import { CartaNaMao } from "../../models/cartaNaMao";
+import { Button } from "../home/components/button";
 
 
 export function Game() {
@@ -28,7 +29,8 @@ export function Game() {
     const [imgDireita, setImgDireita] = useState(imgPorta);
     const [imgEsquerda, setImgEsquerda] = useState(imgPorta);
     const [displayFugir, setDisplayFugir] = useState("none")
-    const [fineshedTurno, setFineshedTurno] = useState(true)
+    const [fineshedTurno, setFineshedTurno] = useState(false)
+    const [fineshedGame, setFineshedGame] = useState(false)
 
 
     function AbrirPorta() {
@@ -36,14 +38,38 @@ export function Game() {
         setTimeout(() => {
             setPorta(carta.imageCard)
             setClassPorta("portaCarta")
+            if(carta.tipo == 'Raça' || carta.tipo == "Classe"){
+                addCartaMao(carta, mesa.player)
+                setTimeout(()=>{
+
+                    setPorta(imgPorta);
+                    setClassPorta('porta');
+                    setFineshedTurno(true);
+                }, 1200)
+            }
+            if(carta.tipo == 'Maldição'){
+                mesa.player.setForca(-1);
+                setTimeout(()=>{
+
+                    setPorta(imgPorta);
+                    setClassPorta('porta');
+                    setFineshedTurno(true);
+                }, 1200)
+            }
         }, 1200);
+       
 
     }
+
+    function passarTurno(){
+        mesa.nextPlayer();
+        setPlayer(mesa.player);
+        setFineshedTurno(false);
+        setCarta(mesa.baralhoPorta.PuxarCarta());
+    }
    
-    function isPlayer(){
-        if(!mesa.player.isUser){
-            AbrirPorta();
-        }
+    function addCartaMao(carta: Card, player: Jogador){
+        player.listaCartas.push(carta);
     }
 
     function Perdeu(player: Jogador){
@@ -56,17 +82,16 @@ export function Game() {
         if (playerWin) {
             for(let i = 0; i < carta.qtdTesouro; i++){
                 const cartaBau = mesa.baralhoTesouro.PuxarCarta();
-                mesa.listaCartasNaMao.push(new CartaNaMao(player, cartaBau));
+                player.listaCartas.push(cartaBau);
                 player.setNivel(1)
                 player.setForca(1)
             }
         }else{
             Perdeu(player)
         }
-        setCarta(mesa.baralhoPorta.PuxarCarta());
         setPorta(imgPorta);
         setClassPorta('porta');
-        setFineshedTurno(false);
+        setFineshedTurno(true);
     }
 
     function Sorteio(e: MouseEvent<HTMLImageElement, globalThis.MouseEvent>){
@@ -100,13 +125,12 @@ export function Game() {
             }
             setTimeout(function (){
                 setDisplayFugir('none');
-                setCarta(mesa.baralhoPorta.PuxarCarta());
                 setPorta(imgPorta);
                 setClassPorta('porta');
                 setImgDireita(imgPorta);
                 setImgEsquerda(imgPorta);
             }, 2000)
-           setFineshedTurno(false);
+           setFineshedTurno(true);
         }, 1000)
 
     }
@@ -115,10 +139,30 @@ export function Game() {
        setDisplayFugir('flex')
     }
 
+    function acabaJogo(){
+        if(mesa.player.nivel >= 10){
+            setFineshedGame(true);
+        }
+    }
+
 
     return (
-        <ContainerGame>
-            <img src={Porta} className={classPorta} onClick={classPorta != "portaCarta" && fineshedTurno ? AbrirPorta : undefined}/>
+        <ContainerGame onLoad={acabaJogo}>
+            {
+                fineshedGame && (
+                    <div id="Acabou">
+                        <h1>Acabou, o {mesa.player.nome} ganhou</h1>
+                    </div>
+                )
+            }
+
+
+            {fineshedTurno && (
+                <div className="divAvançar" onClick={passarTurno}>
+                    <h1>Encerrar Turno</h1>
+                </div>
+            )}
+            <img src={Porta} className={classPorta} onClick={classPorta != "portaCarta" && !fineshedTurno ? AbrirPorta : undefined}/>
             {classPorta == "portaCarta" && carta.tipo == "Monstro" && (
                             
                                     <>
@@ -148,7 +192,7 @@ export function Game() {
             {mesa.listaJogadores.map( (jogador, index) => {
 
                 return(
-                    <div className={jogador.isUser && index==0 ? "bot0ContainerDetails" : `bot${index}ContainerDetails`} key={index}>
+                    <div className={jogador.isUser && index==0 ? `bot0ContainerDetails ${jogador == mesa.player && 'currentPlayer'}` : `bot${index}ContainerDetails ${jogador == mesa.player && 'currentPlayer'}`} key={index}>
                         <div className="conatinerPlayer">
                             <div className="containerDetailsPlayer">
 
@@ -166,17 +210,15 @@ export function Game() {
                                 {jogador.isUser ? ( 
                                     <div className="containerCardsUser" >
                                         {
-                                        mesa.listaCartasNaMao.map((elemento, index) => {
-                                            if (elemento.jogador == jogador){
+                                        jogador.listaCartas.map((elemento, index) => {
+                                           
                                                 return (
                                                     <div key={index}>
-                                                        <p className="CardType">{elemento.carta.tipo}</p>
-                                                        <img src={elemento.carta.imageCard}  className="cardUser"/>
+                                                        <p className="CardType">{elemento.tipo}</p>
+                                                        <img src={elemento.imageCard}  className="cardUser"/>
                                                     </div>
                                                 )
-                                            }else{
-                                                return
-                                            }
+                                            
                                             
                                         })
                                         }
@@ -184,7 +226,7 @@ export function Game() {
                                 ) : (
 
                                     <div>
-                                        <h1>Cartas: {jogador.qtdCartas}</h1>
+                                        <h1>Cartas: {jogador.listaCartas.length}</h1>
                                     </div>
 
                                 )

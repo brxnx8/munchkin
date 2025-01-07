@@ -43,11 +43,19 @@ export class Mesa {
             for(let c = 1; c <= 2; c++){
                 const CartaPorta = this.baralhoPorta.PuxarCarta();
                 const CartaTesouro = this.baralhoTesouro.PuxarCarta();
-                this.listaCartasNaMao.push(new CartaNaMao(element, CartaPorta));
-                this.listaCartasNaMao.push(new CartaNaMao(element, CartaTesouro));
+                element.listaCartas.push(CartaPorta);
+                element.listaCartas.push(CartaTesouro);
 
             }
         })
+    }
+
+    nextPlayer(){
+        let currentIndex = this.listaJogadores.findIndex(element => element == this.player)
+        if (currentIndex == this.listaJogadores.length - 1) {
+            currentIndex = -1
+        }
+        this.player = this.listaJogadores[currentIndex+1]
     }
 
    

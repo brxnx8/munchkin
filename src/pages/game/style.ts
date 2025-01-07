@@ -92,15 +92,21 @@ export const ContainerGame = styled.main`
     .bot2ContainerDetails {
         position: absolute;
         top: 0%;
-        left: 20%;
+        left: 30%;
         display: flex;
     }
 
     .bot3ContainerDetails {
         position: absolute;
         top: 0%;
-        left: 40%;
+        left: 60%;
         display: flex;
+    }
+
+    .currentPlayer{
+        border: 5px solid red;
+
+        padding: 10px;
     }
 
     img{
@@ -123,4 +129,43 @@ export const ContainerGame = styled.main`
         color: white;
     }
 
+    .divAvançar{
+        background-color: red;
+
+        align-content: center;
+
+        color: black;
+
+        width: 120px;
+        height: 120px;
+
+        position: absolute;
+        top: 0%;
+        left: 90%;
+
+        border-radius: 10px;
+
+        box-shadow: 5px 5px 5px black;
+    }
+
+    .divAvançar h1{
+        -webkit-text-stroke-width: 0.5px;
+        -webkit-text-stroke-color: black;
+    }
+
+    #Acabou{
+       
+        background-color: rgba(0, 0, 0, 0.955);
+
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 5;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 `;

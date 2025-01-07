@@ -7,25 +7,21 @@ export class Jogador {
     raca: string;
     forca: number;
     isUser: boolean;
-    qtdCartas: number;
+    listaCartas: Card [];
     
 
-    constructor({nome, nivel, classe, raca, forca, isUser, qtdCartas}: Jogador) {
+    constructor({nome, nivel, classe, raca, forca, isUser}: Jogador) {
         this.nome = nome;
         this.nivel = nivel;
         this.classe = classe;
         this.raca = raca;
         this.forca = forca;
         this.isUser = isUser;
-        this.qtdCartas = qtdCartas;
+        this.listaCartas = [];
     }
 
     Lutar(cartaMonstro: Card){
         return (cartaMonstro.nivel <= this.forca)
-    }
-
-    Fugir(){
-        return 
     }
 
     setNivel(n: number){

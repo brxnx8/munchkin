@@ -32,24 +32,22 @@ export function Home() {
     async function StartGame(name: string) {
         const player = new Jogador({
             nome: name,
-            nivel: 5,
+            nivel: 9,
             classe: "nenhuma",
             raca: "Humano",
             forca: 10,
-            isUser: true,
-            qtdCartas: 8
+            isUser: true
         } as Jogador);
         const listaJogadores = [player];
         for(let i = 1; i < 4; i++){
             listaJogadores.push(
                 new Jogador({
                     nome: `bot${i}`,
-                    nivel: 1,
+                    nivel: 9,
                     classe: "nenhuma",
                     raca: "Humano",
-                    forca: 1,
-                    isUser: false,
-                    qtdCartas: 8
+                    forca: 10,
+                    isUser: false
                 } as Jogador)
             )
         }
