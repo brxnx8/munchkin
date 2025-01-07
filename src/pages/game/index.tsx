@@ -207,14 +207,14 @@ export function Game() {
 
     function Sorteio(e: MouseEvent<HTMLImageElement, globalThis.MouseEvent> | HTMLImageElement) {
         let lado  = "Direita"
-        if(e.tagName == "IMG"){
-            e.src = imgPortaAberta;
+        if((e as HTMLImageElement).tagName == "IMG"){
+            (e as HTMLImageElement).src = imgPortaAberta;
     
-            lado = e.classList[1];
+            lado = (e as HTMLImageElement).classList[1];
         }else{
-            e.target.src = imgPortaAberta;
+            ((e as MouseEvent<HTMLImageElement, globalThis.MouseEvent>).target as HTMLImageElement).src = imgPortaAberta;
     
-            lado = e.target.classList[1];  
+            lado = ((e as MouseEvent<HTMLImageElement, globalThis.MouseEvent>).target as HTMLImageElement).classList[1];  
             
         }
 
