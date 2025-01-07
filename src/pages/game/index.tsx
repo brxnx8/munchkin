@@ -28,6 +28,7 @@ export function Game() {
     const [imgDireita, setImgDireita] = useState(imgPorta);
     const [imgEsquerda, setImgEsquerda] = useState(imgPorta);
     const [displayFugir, setDisplayFugir] = useState("none")
+    const [fineshedTurno, setFineshedTurno] = useState(true)
 
 
     function AbrirPorta() {
@@ -65,6 +66,7 @@ export function Game() {
         setCarta(mesa.baralhoPorta.PuxarCarta());
         setPorta(imgPorta);
         setClassPorta('porta');
+        setFineshedTurno(false);
     }
 
     function Sorteio(e: MouseEvent<HTMLImageElement, globalThis.MouseEvent>){
@@ -104,7 +106,7 @@ export function Game() {
                 setImgDireita(imgPorta);
                 setImgEsquerda(imgPorta);
             }, 2000)
-           
+           setFineshedTurno(false);
         }, 1000)
 
     }
@@ -116,7 +118,7 @@ export function Game() {
 
     return (
         <ContainerGame>
-            <img src={Porta} className={classPorta} onClick={classPorta != "portaCarta" ? AbrirPorta : undefined}/>
+            <img src={Porta} className={classPorta} onClick={classPorta != "portaCarta" && fineshedTurno ? AbrirPorta : undefined}/>
             {classPorta == "portaCarta" && carta.tipo == "Monstro" && (
                             
                                     <>
