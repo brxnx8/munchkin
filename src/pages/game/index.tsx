@@ -165,7 +165,7 @@ export function Game() {
 
     function isBot(){
         if(!mesa.player.isUser){
-            bot(mesa.player, carta)
+            bot(mesa.player)
         }
     }
 
