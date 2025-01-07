@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-interface PropsContainerFinishGame {
+interface PropsContainerFugirGame {
     display: string;
 }
 
-export const ContainerFinishGame = styled.div<PropsContainerFinishGame>`
+export const ContainerFugirGame = styled.div<PropsContainerFugirGame>`
     background-color: rgba(0, 0, 0, 0.955);
 
     position: fixed;
@@ -47,4 +47,14 @@ export const ContainerFinishGame = styled.div<PropsContainerFinishGame>`
     h1 {
         font-size: 40px;
     }
+
+    .divImgFugir{
+        display: flex;
+        gap: 20px;
+    }
+
+    .imgCartaFugir{
+        width: 140px;
+    }
+
 `;

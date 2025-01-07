@@ -1,3 +1,4 @@
+import { Card } from "./carta";
 
 export class Jogador {
     nome: string;
@@ -17,5 +18,21 @@ export class Jogador {
         this.forca = forca;
         this.isUser = isUser;
         this.qtdCartas = qtdCartas;
+    }
+
+    Lutar(cartaMonstro: Card){
+        return (cartaMonstro.nivel <= this.forca)
+    }
+
+    Fugir(){
+        return 
+    }
+
+    setNivel(n: number){
+        this.nivel += n;
+    }
+
+    setForca(n: number){
+        this.forca += n;
     }
 }

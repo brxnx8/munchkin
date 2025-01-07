@@ -5,9 +5,17 @@ import imgPortaAberta from "../../assets/images/Door1.png"
 import imgAvatar from "../../assets/images/cpu-3m.png"
 import imgBatle from "../../assets/images/btn-battle.png"
 import imgRun from "../../assets/images/btn-run.png"
+import empty from "../../assets/images/EmptyCard.jpeg"
+import emptyX from "../../assets/images/EmptyCardX.png"
+import emptyO from "../../assets/images/EmptyCardO.png"
+
+import { FugirGame } from "./components/finshGame";
 
 import { ContainerGame } from "./style";
 import { MesaContext } from "../../contexts/MesaContext";
+import { Card } from "../../models/carta";
+import { Jogador } from "../../models/jogador";
+import { CartaNaMao } from "../../models/cartaNaMao";
 
 
 export function Game() {
@@ -17,9 +25,12 @@ export function Game() {
     const [Porta, setPorta] = useState(imgPorta);
     const [classPorta, setClassPorta] = useState("porta");
     const [carta, setCarta] = useState(mesa.baralhoPorta.PuxarCarta());
+    const [imgDireita, setImgDireita] = useState(imgPorta);
+    const [imgEsquerda, setImgEsquerda] = useState(imgPorta);
+    const [displayFugir, setDisplayFugir] = useState("none")
+
 
     function AbrirPorta() {
-                console.log(mesa)
         setPorta(imgPortaAberta);
         setTimeout(() => {
             setPorta(carta.imageCard)
@@ -34,16 +45,99 @@ export function Game() {
         }
     }
 
+    function Perdeu(player: Jogador){
+        player.setNivel(-(player.nivel)+1);
+        player.setForca(-(player.forca)+1);
+    }
+
+    function batle(carta: Card, player: Jogador){
+        const playerWin = player.Lutar(carta);
+        if (playerWin) {
+            for(let i = 0; i < carta.qtdTesouro; i++){
+                const cartaBau = mesa.baralhoTesouro.PuxarCarta();
+                mesa.listaCartasNaMao.push(new CartaNaMao(player, cartaBau));
+                player.setNivel(1)
+                player.setForca(1)
+            }
+        }else{
+            Perdeu(player)
+        }
+        setCarta(mesa.baralhoPorta.PuxarCarta());
+        setPorta(imgPorta);
+        setClassPorta('porta');
+    }
+
+    function Sorteio(e: MouseEvent<HTMLImageElement, globalThis.MouseEvent>){
+
+       e.target.src = imgPortaAberta;
+
+
+       const lado = e.target.classList[1]
+
+       setTimeout(function() {
+
+            const resultado = Math.random() < 0.5 ? 0 : 1;
+            if(resultado == 1){
+                setImgDireita(emptyO);
+                setImgEsquerda(emptyX);
+                if(lado == "Direita"){
+                    console.log("fugiu")
+                }else{
+                    console.log("nao fugiu")
+                    Perdeu(mesa.player)
+                }
+            }else{
+                setImgDireita(emptyX);
+                setImgEsquerda(emptyO);
+                if(lado == "Esquerda"){
+                    console.log("fugiu")
+                }else{
+                    console.log("nao fugiu")
+                    Perdeu(mesa.player)
+                }
+            }
+            setTimeout(function (){
+                setDisplayFugir('none');
+                setCarta(mesa.baralhoPorta.PuxarCarta());
+                setPorta(imgPorta);
+                setClassPorta('porta');
+                setImgDireita(imgPorta);
+                setImgEsquerda(imgPorta);
+            }, 2000)
+           
+        }, 1000)
+
+    }
+
+    function Fugir(){
+       setDisplayFugir('flex')
+    }
+
 
     return (
         <ContainerGame>
             <img src={Porta} className={classPorta} onClick={classPorta != "portaCarta" ? AbrirPorta : undefined}/>
             {classPorta == "portaCarta" && carta.tipo == "Monstro" && (
-
+                            
+                                    <>
                                         <div className="porta" id="btnPorta">
-                                            <img src={imgBatle}/>
-                                            <img src={imgRun} />
+                                            <img src={imgBatle} onClick={() => batle(carta, mesa.player)}/>
+                                            <img src={imgRun} onClick={Fugir}/>
                                         </div>
+                                        <FugirGame
+                                            display={displayFugir}
+                                            text="Ache a Carta com Circulo para fugir"
+                                        >
+                                            <div className="divImgFugir">
+                                                <img src={imgEsquerda} onClick={(e) => Sorteio(e)} className="imgCartaFugir Esquerda"/>
+                                                <img src={imgDireita} onClick={(e) => Sorteio(e)} className="imgCartaFugir Direita"/>
+                                            </div>
+                                        </FugirGame>
+                                            
+                                    
+                                            
+                                        
+                                    </>
 
 
 

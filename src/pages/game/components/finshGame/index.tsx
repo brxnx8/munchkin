@@ -1,18 +1,19 @@
-import { ContainerFinishGame } from "./style";
+import { ReactNode } from "react";
+import { ContainerFugirGame } from "./style";
 
-interface PropsFinish {
+interface PropsFugir {
     display: string;
     text: string;
-    reset: () => void;
+    children: ReactNode;
 }
 
-export function FinishGame({ display, text, reset }: PropsFinish) {
+export function FugirGame({ display, text, children }: PropsFugir) {
     return (
-        <ContainerFinishGame display={display}>
+        <ContainerFugirGame display={display}>
             <section>
                 <h1>{text}</h1>
-                <button onClick={() => reset()}>Fim</button>
+                {children}
             </section>
-        </ContainerFinishGame>
+        </ContainerFugirGame>
     );
 }

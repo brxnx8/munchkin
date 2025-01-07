@@ -22,7 +22,15 @@ export class CartasRepository {
     }
 
     createCard(card: Card) {
-        const carta = new Card(card);
+        const carta = new Card(
+            {
+                name: card['name'],
+                description: card['description'],
+                imageCard: card['imageCard'],
+                nivel: card['nivel'],
+                qtdTesouro: card['qtdTesouro'],
+                tipo: card['tipo']
+            });
         this.cartas.push(carta)
     }
 

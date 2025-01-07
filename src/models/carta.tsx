@@ -4,11 +4,17 @@ export class Card {
     description: string;
     imageCard: string;
     tipo: string;
+    nivel: number;
+    qtdTesouro: number;
 
-    constructor(card: Card) {
-        this.name = card['name'];
-        this.description = card['description'];
-        this.imageCard = card['imageCard'];
-        this.tipo = card['tipo'];
+    constructor({name, description, imageCard, tipo, nivel, qtdTesouro}: Card) {
+        this.name = name;
+        this.description = description;
+        this.imageCard = imageCard;
+        this.tipo = tipo;
+        this.nivel = nivel;
+        this.qtdTesouro = qtdTesouro;
+
+        
     }
 }

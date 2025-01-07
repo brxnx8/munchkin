@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import wallpaper from "../../assets/images/wallpaperGame.png";
+
 
 export const ContainerGame = styled.main`
     width: 100%;
@@ -122,4 +122,5 @@ export const ContainerGame = styled.main`
 
         color: white;
     }
+
 `;

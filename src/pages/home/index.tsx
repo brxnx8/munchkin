@@ -32,13 +32,13 @@ export function Home() {
     async function StartGame(name: string) {
         const player = new Jogador({
             nome: name,
-            nivel: 1,
+            nivel: 5,
             classe: "nenhuma",
             raca: "Humano",
-            forca: 1,
+            forca: 10,
             isUser: true,
             qtdCartas: 8
-        });
+        } as Jogador);
         const listaJogadores = [player];
         for(let i = 1; i < 4; i++){
             listaJogadores.push(
@@ -50,7 +50,7 @@ export function Home() {
                     forca: 1,
                     isUser: false,
                     qtdCartas: 8
-                })
+                } as Jogador)
             )
         }
         const mesa = new Mesa(listaJogadores, player);
