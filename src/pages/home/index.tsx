@@ -7,7 +7,7 @@ import {
     useState,
 } from "react";
 
-import { PlayerContext } from "../../contexts/PlayerContext";
+import { CartaContext } from "../../contexts/CardContext";
 
 import { Button } from "./components/button";
 
@@ -19,7 +19,7 @@ import { MesaContext } from "../../contexts/MesaContext";
 import { Mesa } from "../../models/mesa";
 
 export function Home() {
-    const { player, setPlayer } = useContext(PlayerContext);
+    const { carta, setCarta } = useContext(CartaContext);
     const { bots, setBots } = useContext(BotsContext);
     const { mesa, setMesa } = useContext(MesaContext);
     const [NomeJogador, setNomeJogador] = useState("");
@@ -32,37 +32,35 @@ export function Home() {
     async function StartGame(name: string) {
         const player = new Jogador({
             nome: name,
-            nivel: 9,
+            nivel: 0,
             classe: "nenhuma",
             raca: "Humano",
-            forca: 10,
-            isUser: true
+            forca: 0,
+            isUser: true,
         } as Jogador);
         const listaJogadores = [player];
-        for(let i = 1; i < 4; i++){
+        for (let i = 1; i < 4; i++) {
             listaJogadores.push(
                 new Jogador({
                     nome: `bot${i}`,
-                    nivel: 9,
+                    nivel: 0,
                     classe: "nenhuma",
                     raca: "Humano",
-                    forca: 10,
-                    isUser: false
+                    forca: 0,
+                    isUser: false,
                 } as Jogador)
-            )
+            );
         }
         const mesa = new Mesa(listaJogadores, player);
-        await mesa.Main()
+        await mesa.Main();
+        setCarta(mesa.baralhoPorta.PuxarCarta());
         setMesa(mesa);
-        navigate("/game")
-
-
+        navigate("/game");
     }
 
     return (
         <ContainerHome>
-            <Button StartGame={StartGame} nome={NomeJogador}/>
-
+            <Button StartGame={StartGame} nome={NomeJogador} />
 
             <input
                 placeholder="Nome"

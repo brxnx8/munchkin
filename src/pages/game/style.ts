@@ -30,6 +30,13 @@ export const ContainerGame = styled.main`
 
     }
 
+    .close{
+        width: 28px;
+    }
+    .close:hover{
+        width: 32px;
+    }
+
     .divDetailsText {
         width: 70%;
 
@@ -40,8 +47,8 @@ export const ContainerGame = styled.main`
         display: flex;
         flex-direction: column;
 
-        align-items: center;
-        justify-content: center;
+        align-items: start;
+        
 
         -webkit-text-stroke-width: 0.5px;
         -webkit-text-stroke-color: red;
@@ -58,6 +65,10 @@ export const ContainerGame = styled.main`
         gap: 250px;
 
         left: 37%;
+
+        transition: 0.3s ease-in-out;
+
+        
     }
 
     .porta {
@@ -65,14 +76,20 @@ export const ContainerGame = styled.main`
         top: 30%;
         left: 43.8%;
 
-        width: 200px;
+        width: 180px;
+
+        transition: 0.3s ease-in-out;
+
+        
     }
 
     .portaCarta {
         position: absolute;
         top: 30%;
         left: 43.8%;
-        width: 180px;
+        width: 200px;
+
+        transition: 0.3s ease-in-out;
     }
 
     .bot0ContainerDetails {
@@ -104,9 +121,11 @@ export const ContainerGame = styled.main`
     }
 
     .currentPlayer{
-        border: 5px solid red;
+        border: 3px solid red;
 
-        padding: 10px;
+        box-sizing: border-box;
+
+        padding: 8px;
     }
 
     img{
@@ -146,6 +165,18 @@ export const ContainerGame = styled.main`
         border-radius: 10px;
 
         box-shadow: 5px 5px 5px black;
+
+        transition: 0.3s;
+
+        cursor: pointer;
+    }
+
+    .divAvançar:active {
+        font-size: 0.8rem;
+        && h1{
+            top: 35%;
+            right: 42%;
+        }
     }
 
     .divAvançar h1{
@@ -164,8 +195,41 @@ export const ContainerGame = styled.main`
         right: 0;
         z-index: 5;
 
+        transition: 0.3s;
+
         display: flex;
         align-items: center;
         justify-content: center;
+
+        transition: 0.3s;
+    }
+
+    .CartaLegenda{
+        position: relative;
+    }
+
+    .CartaLegenda figcaption{
+        opacity: 0;
+
+        position: absolute;
+
+        background-color: rgba(0, 0, 0, .8);
+
+        top: 0;
+        width: 95%;
+        height: 95%;
+        
+        padding: 10px;
+
+        box-sizing: border-box;
+
+        transition: 0.3s;
+
+        cursor: pointer;
+        
+    }
+
+    .CartaLegenda:hover figcaption{
+        opacity: 1;
     }
 `;

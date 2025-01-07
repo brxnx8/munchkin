@@ -8,6 +8,6 @@ export const ConteinerHeader = styled.header`
     align-items: center;
     
     img{
-        width: 450px;
+        width: 350px;
     }
 `

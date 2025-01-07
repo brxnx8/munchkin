@@ -40,7 +40,7 @@ export class Mesa {
 
     DistribuirCartas(){
         this.listaJogadores.forEach((element: Jogador) => {
-            for(let c = 1; c <= 2; c++){
+            for(let c = 1; c <= 4; c++){
                 const CartaPorta = this.baralhoPorta.PuxarCarta();
                 const CartaTesouro = this.baralhoTesouro.PuxarCarta();
                 element.listaCartas.push(CartaPorta);
